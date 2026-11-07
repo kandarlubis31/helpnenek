@@ -20,10 +20,10 @@ screen, a folder picker or a sync toggle will not survive contact with reality.
 1. The app asks for photo access and enumerates the device library with `photo_manager`.
 2. Every photo not already in its sent-list is uploaded to Dropbox over the HTTP API.
 3. Successful uploads are recorded in `SharedPreferences` (`sent_files`), so re-running the app
- only sends what is new.
+   only sends what is new.
 4. On the family computer, `tool/dropbox_receiver.dart` polls the Dropbox app folder every 10
- seconds, downloads each file into `received_photos/`, then **deletes it from Dropbox** — the
- folder stays small and never runs into a quota.
+   seconds, downloads each file into `received_photos/`, then **deletes it from Dropbox** — the
+   folder stays small and never runs into a quota.
 
 The UI reports live counters (`sent`, `skipped`, `failed`) and the name of the file in flight,
 with a distinct state for each phase: checking, permission needed, sending, done, error.
@@ -70,11 +70,11 @@ test/widget_test.dart
 ## Notes
 
 - The Dropbox token is compiled into the APK. Anyone with the APK can extract it — treat it as a
- scoped, revocable credential, not a secret.
+  scoped, revocable credential, not a secret.
 - Uploads are sequential by design. Parallelism would make the progress display useless and
- trigger rate limits on a slow connection.
+  trigger rate limits on a slow connection.
 - There is no delta sync: the sent-list is append-only, so re-installing the app causes one full
- re-upload.
+  re-upload.
 
 ---
 
