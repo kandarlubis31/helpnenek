@@ -76,6 +76,14 @@ test/widget_test.dart
 - There is no delta sync: the sent-list is append-only, so re-installing the app causes one full
   re-upload.
 
+---
+
+## Bahasa Indonesia
+
+**helpnenek** adalah aplikasi Flutter satu tombol untuk mencadangkan foto: semua foto di ponsel dikirim ke akun Dropbox, ditujukan bagi kerabat yang tidak bisa diminta mengurus berkas sendiri.
+
+---
+
 ## License
 
 MIT
